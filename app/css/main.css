@@ -1,0 +1,52 @@
+body{
+    background: rgb(44, 44, 44);
+    color: azure;
+}
+
+#main{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.settings-tabs{
+    height: 100%;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    text-align: center;
+}
+
+.settings-tabs-panes{
+    padding-top: 30px;
+    padding-left: 140px;
+}
+
+.settings-tab{
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.tab-pane:not(.active){
+    display: none;
+}
+
+.nav-tabs{
+    border-bottom: 1px solid #545b62;
+}
+
+.setting{
+    padding-left: 20%;
+}
+
+.setting-item{
+    display: inline-block;
+}
+
+.setting-edit{
+    margin-left: 30%;
+}

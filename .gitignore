@@ -1,0 +1,4 @@
+node_modules
+.vscode
+app/assets/cryptocurrencies.json
+app/assets/metadata.json

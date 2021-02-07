@@ -1,0 +1,136 @@
+{
+  "name": "cointail",
+  "version": "0.1.0",
+  "description": "A desktop app to track different cryptocurrencies",
+  "main": "main.js",
+  "keywords": [],
+  "author": {
+    "name": "Xalageus",
+    "email": "xalageus@gmail.com",
+    "url": "https://github.com/Xalageus"
+  },
+  "homepage": "https://github.com/Xalageus/cointail",
+  "scripts": {
+    "start": "electron .",
+    "build": "node build.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-wl": "electron-builder -wl",
+    "dist-all": "electron-builder -mwl",
+    "clean": "del-cli dist app/assets/cryptocurrencies.json app/assets/metadata.json"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "del-cli": "^3.0.1",
+    "electron": "^11.2.2",
+    "electron-builder": "^22.9.1",
+    "eslint": "^7.19.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.22.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash.sortby": "^4.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "cryptocompare": "^1.0.0",
+    "cryptocurrencies": "^7.0.0",
+    "electron-settings": "^4.0.2",
+    "html5sortable": "^0.10.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "build": {
+    "artifactName": "${productName}-${channel}-${version}-${os}-${arch}.${ext}",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "target": {
+        "target": "dmg",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    },
+    "linux": {
+      "category": "Network",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "freebsd",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "pacman",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "tar.gz",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "tar.bz2",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  }
+}

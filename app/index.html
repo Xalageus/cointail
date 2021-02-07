@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cointail</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <ul class="nav nav-tabs" role="tablist" id="maintabs">
+        <li class="nav-item">
+            <a id="main-tab" class="nav-link active" role="tab" data-toggle="tab" href="#main">Main</a>
+        </li>
+        <li class="nav-item">
+            <a id="settings-tab" class="nav-link" role="tab" data-toggle="tab" href="#settings">Settings</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="main" aria-labelledby="main-tab" class="tab-pane fade show active" role="tabpanel" aria-controls="main" aria-selected="true">
+            <div id="btc-price">BTC Price in USD: </div>
+        </div>
+    
+        <div id="settings" aria-labelledby="settings-tab" class="tab-pane fade" role="tabpanel" aria-controls="settings" aria-selected="true">
+            <ul class="nav nav-tabs settings-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="settingsgeneral-tab" class="nav-link settings-tab active" role="tab" data-toggle="tab" href="#settings-general">General</a>
+                </li>
+                <li class="nav-item">
+                    <a id="settingsabout-tab" class="nav-link settings-tab" role="tab" data-toggle="tab" href="#settings-about">About</a>
+                </li>
+            </ul>
+
+            <div class="tab-content settings-tabs-panes">
+                <div id="settings-general" aria-labelledby="settingsgeneral-tab" class="tab-pane fade show active" role="tabpanel" aria-controls="settings-general" aria-selected="true">
+                    <div class="setting setting-ac-interval">
+                        <h5 class="setting-item">Auto-Update interval</h5>
+                        <select class="setting-item setting-edit" name="ac-interval" id="setting ac-interval">
+                            <option value="5s">5 Seconds</option>
+                            <option value="10s">10 Seconds</option>
+                            <option value="15s">15 Seconds</option>
+                            <option value="30s">30 Seconds</option>
+                            <option value="1m">1 Minute</option>
+                            <option value="2m">2 Minutes</option>
+                            <option value="5m">5 Minutes</option>
+                            <option value="10m">10 Minutes</option>
+                            <option value="15m">15 Minutes</option>
+                            <option value="30m">30 Minutes</option>
+                            <option value="60m">1 Hour</option>
+                        </select>
+                    </div>
+                    <div class="setting setting-api-key">
+                        <h5 class="setting-item">API Key (Optional)</h5>
+                        <input class="setting-item setting-edit" type="text" id="setting api-key"/>
+                    </div>
+                    <div class="setting setting-reset-active-settings-tab">
+                        <h5 class"setting-item">Reset active settings tab</h5>
+                        <input class="setting-item setting-edit"
+                    </div>
+                </div>
+    
+                <div id="settings-about" aria-labelledby="settingsabout-tab" class="tab-pane fade" role="tabpanel" aria-controls="settings-about" aria-selected="true">
+                    We are using Node <script>document.write(process.versions.node)</script>,
+                    Chrome <script>document.write(process.versions.chrome)</script>,
+                    V8 <script>document.write(process.versions.v8)</script>,
+                    and Electron <script>document.write(process.versions.electron)</script>.
+                    <div id="ver">
+                        Built using Node
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/renderer.js"></script>
+    <script src="js/metadataLoader.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
